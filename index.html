@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Win98</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%2210 0 100 100%22><text y=%22.90em%22 font-size=%2290%22>⛅</text></svg>"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      body {
+        font-family: "MS Sans Serif", sans-serif;
+      }
+      .btn {
+        border-style: outset;
+      }
+      .btn:active {
+        border-style: inset;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center min-h-screen bg-[teal]">
+    <div
+      class="bg-[silver] border-2 border-[gray] w-80 p-2 shadow-[4px_4px_0_0_gray]"
+    >
+      <div
+        class="bg-[navy] text-white p-1 font-bold flex justify-between items-center"
+      >
+        <span class="ml-1">Weather Win98</span>
+        <button
+          id="closeButton"
+          class="btn bg-[silver] border-2 border-[gray] px-2 py-0.5 cursor-pointer text-black"
+        >
+          ✕
+        </button>
+      </div>
+      <div>
+        <div class="pt-2">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Enter city eg. Atlanta, GA, USA"
+            class="border-2 border-[inset] border-[gray] p-0.5 w-full"
+          />
+        </div>
+        <button
+          id="searchButton"
+          class="btn bg-[silver] border-2 border-[gray] px-2 py-0.5 cursor-pointer mt-2 w-full"
+        >
+          Search
+        </button>
+        <div id="weatherResult" class="hidden mt-4 text-center">
+          <p id="cityName" class="font-bold"></p>
+          <p id="temperature" class="text-xl"></p>
+          <p id="weatherDescription"></p>
+        </div>
+        <div
+          id="errorMessage"
+          class="hidden text-red-500 mt-2 text-center"
+        ></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
