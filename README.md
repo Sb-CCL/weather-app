@@ -9,7 +9,7 @@ A weather application that brings back the classic Windows 98 aesthetic. Search 
 - **Retro UI Design**: Authentic Windows 98-inspired interface with classic buttons and dialogs.
 - **City Search**: Find weather by city name (e.g., "London, UK" or "Paris, FR").
 - **Dynamic Weather Display**: Shows temperature (°C), conditions, and city name.
-- **Celebration Confetti**: Playful confetti animation on successful weather fetch.
+- **Celebration Confetti**: Win98 style confetti animation on successful weather fetch.
 - **Responsive Design**: Works seamlessly on modern browsers.
 
 ## 🛠️ Tech Stack
