@@ -12,7 +12,6 @@ const BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
 // Event listeners
 searchButton.addEventListener("click", handleSearch);
 closeButton.addEventListener("click", resetApp);
-
 cityInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     handleSearch();
@@ -27,6 +26,7 @@ function resetApp() {
   errorMessageElement.classList.add("hidden");
 }
 
+// Trigger Confetti
 function triggerConfetti() {
   function randomInRange(min, max) {
     return Math.random() * (max - min) + min;
@@ -65,8 +65,10 @@ function triggerConfetti() {
 }
 
 function handleSearch() {
+  // Grabs the input value and trims any empty spaces
   const cityName = cityInput.value.trim();
 
+  // Checks if the input value submitted empty
   if (!cityName) {
     showError("Please enter a city name.");
     return;
@@ -74,6 +76,8 @@ function handleSearch() {
 
   const apiUrl = `${BASE_URL}?q=${cityName}&appid=${API_KEY}&units=metric`;
   fetchWeatherData(apiUrl);
+
+  // Resets the inpute field
   cityInput.value = "";
 }
 
@@ -81,8 +85,11 @@ function fetchWeatherData(url) {
   axios
     .get(url)
     .then((response) => {
+      // Hides any errors
       hideError();
+      // Shows the response data
       displayWeather(response.data);
+      // Triggers Confetti
       triggerConfetti();
     })
     .catch((error) => {
@@ -91,14 +98,18 @@ function fetchWeatherData(url) {
 }
 
 function displayWeather(data) {
+  // Updates the city name and country
   document.getElementById(
     "cityName"
   ).textContent = `${data.name}, ${data.sys.country}`;
+  // Updates the temperature
   document.getElementById("temperature").textContent = `${Math.round(
     data.main.temp
   )}°C`;
+  // Updates the description
   document.getElementById("weatherDescription").textContent =
     data.weather[0].description;
+  // Shows the weather results section
   weatherResultElement.classList.remove("hidden");
 }
 
