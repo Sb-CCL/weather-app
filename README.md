@@ -1,6 +1,6 @@
 # Weather - Win98 Style 🌤️
 
-A weather application styled liked Windows 98 interface. Search for global cities and view their with a retro twist.
+A weather application that brings back the classic Windows 98 aesthetic. Search weather conditions for cities worldwide.
 
 ![Weather App Screenshot](./screenshot.png)
 
